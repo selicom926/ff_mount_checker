@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FF MOUNT CHECK</title>
+    <link rel="stylesheet" href="./index/index.css">
+    <script src="../assets/vue.min.js"></script>
+    <script src="./components/mount/mount.component.js"></script>
+    
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>持ってるマウント達</h1>
+            <select v-model="selectKind" @change="onChange">
+                <option v-for="kind in kinds" :key="kind" v-model="kind">{{kind}}</option>
+            </select>
+            <button value="保存" @click="onSaveClick">保存</button>
+        </header>
+        <main class="mount_grid">
+            <Mount v-for="data in mounts" :key="data.name" :data="data"></Mount>
+        </main>
+    </div>
+</body>
+<script src="./index/index.js"></script>
+</html>

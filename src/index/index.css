@@ -1,0 +1,4 @@
+.mount_grid {
+    display: flex;
+    flex-wrap: wrap;
+}
